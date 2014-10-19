@@ -1,0 +1,68 @@
+
+public class algorithm {
+	
+	public static void bubbleSort(int[] a)
+	{
+		double time=System.currentTimeMillis();
+		for(int i=0; i<a.length-1; i++)
+		{
+			for(int j=i+1;j<a.length; j++)
+			{
+				if(a[i]>a[j])
+				{
+					int temp=a[i];
+					a[i]=a[j];
+					a[j]=temp;
+				}
+				
+			}
+			
+		}
+		print(a);
+		double time2=System.currentTimeMillis();
+		
+		System.out.println(time2-time);
+	}
+	
+	public static void chooseSort(int[] a)
+	{
+		double time=System.currentTimeMillis();
+		int small;
+		for(int i=0;i<a.length-1; i++)
+		{
+			small=i;
+			for(int j=i+1; j<a.length;j++)
+			{
+				if(a[small]>a[j])
+				{
+					small=j;
+				}
+			}
+			if(small!=i)
+			{
+				int temp=a[i];
+				a[i]=a[small];
+				a[small]=temp;
+			}
+		
+		}
+		print(a);
+		double time2=System.currentTimeMillis();
+		System.out.println(time2-time);
+	}
+	
+	
+	public static void print(int[] a)
+	{
+		for(int b: a)
+			System.out.print(b+"\t");
+		System.out.println();
+	}
+	public static void main(String[] args)
+	{
+		int[] a={76,5,4876,54,876,45,87,3,587,5,5,76,5,4876,54,876,45,87,3,587,5,5,76,5,4876,54,876,45,87,3,587,5,5,76,5,4876,54,876,45,87,3,587,5,5,76,5,4876,54,876,45,87,3,587,5,5,76,5,4876,54,876,45,87,3,587,5,5,76,5,4876,54,876,45,87,3,587,5,5,4876,54,876,45,87,3,587,5,5,4876,54,876,45,87,3,587,5,5,4876,54,876,45,87,3,587,5,5,4876,54,876,45,87,3,587,5,5,4876,54,876,45,87,3,587,5,5,4876,54,876,45,87,3,587,5,5,4876,54,876,45,87,3,587,5,5,4876,54,876,45,87,3,587,5,5,4876,54,876,45,87,3,587,5,5,4876,54,876,45,87,3,587,5,5,4876,54,876,45,87,3,587,5,5,4876,54,876,45,87,3,587,5,5,4876,54,876,45,87,3,587,5,5,4876,54,876,45,87,3,587,5,5,4876,54,876,45,87,3,587,5,5,4876,54,876,45,87,3,587,5};
+		bubbleSort(a);
+		chooseSort(a);
+		
+	}
+}
